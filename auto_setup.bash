@@ -45,4 +45,7 @@ bash ./Anaconda3-5.1.0-Linux-x86_64.sh
 screen -dmS jupyter bash -c 'jupyter notebook; exec bash'
 
 # output URLs
+echo "RStudio and Jetstream URLs are as follows:"
 ~/carpentry_jetstream_setup/url_reminder.bash
+echo "Username = ${user}"
+echo "Password (set automatically) = jetstream"
