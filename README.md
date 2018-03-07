@@ -31,7 +31,7 @@ sudo gdebi rstudio-server-1.1.423-amd64.deb
 carpentry_jetstream_setup/rstudio_setup.bash
 ```
 
-6. Note the URL and user name outputted from the previous command and point your browser to that URL. You will be prompted to sign in with your username and password. In the top right corner you will see a button to 'Sign Out' or to 'Quit the current R session' (which will give you a fresh R session).
+6. Note the URL and user name outputted from the previous command and point your local browser to that URL. You will be prompted to sign in with your username and password. In the top right corner you will see a button to 'Sign Out' or to 'Quit the current R session' (which will give you a fresh R session).
 
 7. If you lose track of your URL, you can run the following command to remind you of what it is.
 ```bash
@@ -73,7 +73,7 @@ jupyter notebook
 jupyter lab
 ```
 
-6. Note the URL outputted from the previous command and point your browser to that URL. You will be prompted for your password. In the top right corner you will see a button to 'Logout'.
+6. Note the URL outputted from the previous command and point your local browser to that URL. You will be prompted for your password. In the top right corner you will see a button to 'Logout'.
 
 7. If you lose track of your URL, you can run the following command to remind you of what it is.
 ```bash
