@@ -2,7 +2,7 @@
 
 ### Directions for RStudio Server
 
-1. Connect to your running virtual machine through the web terminal or your local shell.
+1. Connect to your running virtual machine through the web terminal or your local shell. These instructions assume an Ubuntu 16.04 VM.
 
 2. Clone this repository.
 ```bash
@@ -41,7 +41,7 @@ carpentry_jetstream_setup/url_reminder.bash
 
 ### Directions for Jupyter Server
 
-1. Connect to your running virtual machine through the web terminal or your local shell.
+1. Connect to your running virtual machine through the web terminal or your local shell. These instructions assume an Ubuntu 16.04 VM.
 
 2. Clone this repository (if you didn't already).
 ```bash
@@ -79,3 +79,8 @@ jupyter lab
 ```bash
 carpentry_jetstream_setup/url_reminder.bash
 ```
+
+
+### Further Reading
+
+These methods were based in part on blog posts outlining how to serve [RStudio](https://angus.readthedocs.io/en/2017/visualizing-blast-scores-with-RStudio.html#installing-and-running-rstudio-on-jetstream) and [Jupyter](https://hackernoon.com/aws-ec2-part-4-starting-a-jupyter-ipython-notebook-server-on-aws-549d87a55ba9) on remote VMs.
