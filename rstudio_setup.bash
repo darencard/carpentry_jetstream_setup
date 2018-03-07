@@ -3,6 +3,9 @@
 # a script that makes user specify a new, temporary password for RStudio login
 # RStudio should already be running
 
+# make sure new path is sourced
+source ~/.bashrc
+
 # figure out username
 user=`whoami`
 
