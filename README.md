@@ -84,3 +84,5 @@ carpentry_jetstream_setup/url_reminder.bash
 ### Further Reading
 
 These methods were based in part on blog posts outlining how to serve [RStudio](https://angus.readthedocs.io/en/2017/visualizing-blast-scores-with-RStudio.html#installing-and-running-rstudio-on-jetstream) and [Jupyter](https://hackernoon.com/aws-ec2-part-4-starting-a-jupyter-ipython-notebook-server-on-aws-549d87a55ba9) on remote VMs.
+
+These same general instructions should work on other VM services, like [Amazon Web Services](https://aws.amazon.com/), but may require some modifications.
