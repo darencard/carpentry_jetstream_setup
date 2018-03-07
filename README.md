@@ -59,6 +59,8 @@ bash ./Anaconda3-5.1.0-Linux-x86_64.sh
 
 4. Configure Jupyter.
 ```bash
+# source ~/.bashrc to make sure new programs are in path
+source ~/.bashrc
 # replace <password> with desired login password
 carpentry_jetstream_setup/jupyter_setup.bash <password>
 ```
