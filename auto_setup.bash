@@ -38,6 +38,9 @@ wget https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh
 # run script to install. default settings should be fine. select yes to have Anaconda bin added to path
 bash ./Anaconda3-5.1.0-Linux-x86_64.sh
 
+# export Anaconda bin to $PATH so we can access contents now
+export PATH=$PATH:~/anaconda3/bin
+
 # configure Jupyter with password 'jetstream'
 ~/carpentry_jetstream_setup/jupyter_setup.bash jetstream
 

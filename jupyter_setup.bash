@@ -10,7 +10,7 @@
 # argument 1: a use-specified password
 
 # make sure new path is sourced
-source ~/.bashrc
+export PATH=$PATH:~/anaconda3/bin
 
 # use python script to set password based on user argument
 password=`~/carpentry_jetstream_setup/set_jupyter_password.py ${1}`
