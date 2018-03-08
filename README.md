@@ -2,7 +2,7 @@
 
 ### Directions for RStudio Server
 
-1. Connect to your running virtual machine through the web terminal or your local shell. These instructions assume an Ubuntu 16.04 VM.
+1. Connect to your running virtual machine through the web terminal or your local shell. These instructions assume an Ubuntu 16.04 VM. We will work from the `$HOME` directory so the scripts run properly.
 
 2. Clone this repository.
 ```bash
@@ -28,7 +28,9 @@ sudo gdebi rstudio-server-1.1.423-amd64.deb
 
 5. Setup RStudio with a login password
 ```bash
-carpentry_jetstream_setup/rstudio_setup.bash
+# replace <password> with desired login password
+# if no <password> is passed, default "password" is used
+carpentry_jetstream_setup/rstudio_setup.bash <password>
 ```
 
 6. Note the URL and user name outputted from the previous command and point your local browser to that URL. You will be prompted to sign in with your username and password. In the top right corner you will see a button to 'Sign Out' or to 'Quit the current R session' (which will give you a fresh R session).
@@ -41,7 +43,7 @@ carpentry_jetstream_setup/url_reminder.bash
 
 ### Directions for Jupyter Server
 
-1. Connect to your running virtual machine through the web terminal or your local shell. These instructions assume an Ubuntu 16.04 VM.
+1. Connect to your running virtual machine through the web terminal or your local shell. These instructions assume an Ubuntu 16.04 VM. We will work from the `$HOME` directory so the scripts run properly.
 
 2. Clone this repository (if you didn't already).
 ```bash
@@ -62,6 +64,7 @@ bash ./Anaconda3-5.1.0-Linux-x86_64.sh
 # source ~/.bashrc to make sure new programs are in path
 source ~/.bashrc
 # replace <password> with desired login password
+# if no <password> is passed, default "password" is used
 carpentry_jetstream_setup/jupyter_setup.bash <password>
 ```
 
@@ -80,6 +83,15 @@ jupyter lab
 7. If you lose track of your URL, you can run the following command to remind you of what it is.
 ```bash
 carpentry_jetstream_setup/url_reminder.bash
+```
+
+
+### Automatic Installation
+
+An additional script `auto_setup.bash` is provided that will run all steps outlined above to automatically install RStudio and Anaconda/Jupyter and get them running. The user will need to respond to certain prompts throughout the process, but it should handle most matters. We will work from the `$HOME` directory so the scripts run properly.
+
+```bash
+carpentry_jetstream_setup/auto_setup.bash
 ```
 
 
