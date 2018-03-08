@@ -33,5 +33,8 @@ password=`~/carpentry_jetstream_setup/set_jupyter_password.py ${pass}`
 # can also run Jupyter "Lab" instead of "Notebook"
 # screen -dmS jupyter bash -c 'jupyter lab; exec bash'
 
+# report password to user
+echo -e "Your RStudio password is ${pass}."
+
 # tell user where to go
 echo -e "\nYour Jupyter Web server will run at: https://$(hostname):8888/"
