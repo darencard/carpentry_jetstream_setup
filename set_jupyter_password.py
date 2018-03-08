@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env ipython
 
 # script to generate a password hash for Jupyter
 

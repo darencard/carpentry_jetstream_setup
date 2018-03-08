@@ -21,10 +21,16 @@ sudo gdebi rstudio-server-1.1.423-amd64.deb
 # figure out username
 user=`whoami`
 
+# accept user-defined password or use default of 'password'
+if [ -n "$1" ]
+then
+   pass=$1
+else
+pass=password
+fi
 # prompt user to enter new password
 # this seems to always be necessary, so just have students do it by default
-echo -e "Please choose a password for logging into RStudio."
-sudo chpasswd ${user}:jetstream && \
+echo "${user}:${pass}" | sudo chpasswd && \
 echo -e "\nYou will need this password to log into RStudio."
 
 # tell students the username they need to login
@@ -42,7 +48,7 @@ bash ./Anaconda3-5.1.0-Linux-x86_64.sh
 export PATH=$PATH:~/anaconda3/bin
 
 # configure Jupyter with password 'jetstream'
-~/carpentry_jetstream_setup/jupyter_setup.bash jetstream
+~/carpentry_jetstream_setup/jupyter_setup.bash ${pass}
 
 # automatically start Jupyter with screen instance
 screen -dmS jupyter bash -c 'jupyter notebook; exec bash'
@@ -51,4 +57,4 @@ screen -dmS jupyter bash -c 'jupyter notebook; exec bash'
 echo "RStudio and Jetstream URLs are as follows:"
 ~/carpentry_jetstream_setup/url_reminder.bash
 echo "Username = ${user}"
-echo "Password (set automatically) = jetstream"
+echo "Password = ${pass}"
