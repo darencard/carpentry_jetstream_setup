@@ -12,8 +12,16 @@
 # make sure new path is sourced
 export PATH=$PATH:~/anaconda3/bin
 
+# accept user-defined password or use default of 'password'
+if [ -n "$1" ]
+then
+   pass=$1
+else
+   pass=password
+fi
+
 # use python script to set password based on user argument
-password=`~/carpentry_jetstream_setup/set_jupyter_password.py ${1}`
+password=`~/carpentry_jetstream_setup/set_jupyter_password.py ${pass}`
 
 # feed password hash into jupyter configuration script at ~/.jupyter
 ~/carpentry_jetstream_setup/setup_jupyter_config.bash ${password}
