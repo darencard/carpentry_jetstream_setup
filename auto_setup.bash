@@ -26,7 +26,7 @@ if [ -n "$1" ]
 then
    pass=$1
 else
-pass=password
+   pass=password
 fi
 
 # prompt user to enter new password
@@ -52,7 +52,7 @@ export PATH=$PATH:~/anaconda3/bin
 ~/carpentry_jetstream_setup/jupyter_setup.bash ${pass}
 
 # automatically start Jupyter with screen instance
-screen -dmS jupyter bash -c 'jupyter notebook; exec bash'
+screen -dmS jupyter-nb bash -c 'jupyter notebook; exec bash'
 
 # output URLs
 echo "RStudio and Jetstream URLs are as follows:"
