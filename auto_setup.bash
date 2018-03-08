@@ -28,6 +28,7 @@ then
 else
 pass=password
 fi
+
 # prompt user to enter new password
 # this seems to always be necessary, so just have students do it by default
 echo "${user}:${pass}" | sudo chpasswd && \
