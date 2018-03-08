@@ -71,10 +71,11 @@ carpentry_jetstream_setup/jupyter_setup.bash <password>
 5. Run Jupyter.
 ```bash
 # probably best to open a new screen so you can leave it running if you get logged out
-screen -S jupyter
+screen -S jupyter-nb
 # now start Jupyter
 jupyter notebook
 # alternatively, can use Jupyter Lab IDE instead easily
+screen -S jupyter-lab
 jupyter lab
 ```
 
