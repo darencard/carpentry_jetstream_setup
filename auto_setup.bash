@@ -14,8 +14,8 @@ sudo apt-get install gdebi-core
 
 # download RStudio server image and build from image
 # you should get a message stating that RStudio is running
-wget https://download2.rstudio.org/rstudio-server-1.1.423-amd64.deb
-sudo gdebi rstudio-server-1.1.423-amd64.deb
+wget https://download2.rstudio.org/rstudio-server-1.1.456-amd64.deb
+sudo gdebi rstudio-server-1.1.456-amd64.deb
 
 # setup RStudio for login
 # figure out username
@@ -41,9 +41,9 @@ echo -e "\nYour RStudio username is ${user}."
 echo -e "\nYour RStudio Web server is running at: http://$(hostname):8787/"
 
 # download Anaconda installer script and install
-wget https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh
+wget https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh
 # run script to install. default settings should be fine. select yes to have Anaconda bin added to path
-bash ./Anaconda3-5.1.0-Linux-x86_64.sh
+bash ./Anaconda3-5.2.0-Linux-x86_64.sh
 
 # export Anaconda bin to $PATH so we can access contents now
 export PATH=$PATH:~/anaconda3/bin
