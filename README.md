@@ -63,9 +63,13 @@ bash ./Anaconda3-5.2.0-Linux-x86_64.sh
 ```bash
 # source ~/.bashrc to make sure new programs are in path
 source ~/.bashrc
+# create a password hash
 # replace <password> with desired login password
-# if no <password> is passed, default "password" is used
-carpentry_jetstream_setup/jupyter_setup.bash <password>
+password=`~/carpentry_jetstream_setup/set_jupyter_password.py <password>`
+# use password hash to configure SSL certificate
+carpentry_jetstream_setup/setup_jupyter_config.bash ${password}
+# change group on SSL certificate so it isn't root
+sudo chown `whoami`:`whoami` ~/certs/mycert.pem
 ```
 
 5. Run Jupyter.
@@ -84,15 +88,6 @@ jupyter lab
 7. If you lose track of your URL, you can run the following command to remind you of what it is.
 ```bash
 carpentry_jetstream_setup/url_reminder.bash
-```
-
-
-### Automatic Installation
-
-An additional script `auto_setup.bash` is provided that will run all steps outlined above to automatically install RStudio and Anaconda/Jupyter and get them running. The user will need to respond to certain prompts throughout the process, but it should handle most matters. We will work from the `$HOME` directory so the scripts run properly.
-
-```bash
-carpentry_jetstream_setup/auto_setup.bash
 ```
 
 
