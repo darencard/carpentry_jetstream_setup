@@ -2,12 +2,12 @@
 
 ### Directions for RStudio Server
 
-1. Connect to your running virtual machine through the web terminal or your local shell. These instructions assume an Ubuntu 16.04 VM. We will work from the `$HOME` directory so the scripts run properly.
+1. Connect to your running virtual machine through the web terminal or your local shell. These instructions assume an Ubuntu 16.04 VM. We will work from the `/opt` directory so that we can make an image of the VM properly in Jetstream.
 
 2. Clone this repository.
 ```bash
 # git is already installed
-git clone https://github.com/darencard/carpentry_jetstream_setup.git
+sudo git clone https://github.com/darencard/carpentry_jetstream_setup.git
 ```
 
 3. Install R using apt-get.
@@ -22,7 +22,7 @@ sudo apt-get install gdebi-core
 
 # download RStudio server image and build from image
 # you should get a message stating that RStudio is running
-wget https://download2.rstudio.org/rstudio-server-1.1.456-amd64.deb
+sudo wget https://download2.rstudio.org/rstudio-server-1.1.456-amd64.deb
 sudo gdebi rstudio-server-1.1.456-amd64.deb
 ```
 
@@ -48,15 +48,18 @@ carpentry_jetstream_setup/url_reminder.bash
 2. Clone this repository (if you didn't already).
 ```bash
 # git is already installed
-git clone https://github.com/darencard/carpentry_jetstream_setup.git
+sudo git clone https://github.com/darencard/carpentry_jetstream_setup.git
 ```
 
 3. Install Anaconda3.
 ```bash
 # download Anaconda installer script and install
 wget https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh
-# run script to install. default settings should be fine. select yes to have Anaconda bin added to path
-bash ./Anaconda3-5.2.0-Linux-x86_64.sh
+# run script to install. 
+# change install prefix path to /opt/anaconda3
+# select yes to have Anaconda bin added to ~/.bashrc path
+# select no to installing MS VScode
+sudo bash ./Anaconda3-5.2.0-Linux-x86_64.sh
 ```
 
 4. Configure Jupyter.
@@ -65,9 +68,9 @@ bash ./Anaconda3-5.2.0-Linux-x86_64.sh
 source ~/.bashrc
 # create a password hash
 # replace <password> with desired login password
-password=`~/carpentry_jetstream_setup/set_jupyter_password.py <password>`
+password=`/opt/carpentry_jetstream_setup/set_jupyter_password.py <password>`
 # use password hash to configure SSL certificate
-carpentry_jetstream_setup/setup_jupyter_config.bash ${password}
+/opt/carpentry_jetstream_setup/setup_jupyter_config.bash ${password}
 # change group on SSL certificate so it isn't root
 sudo chown `whoami`:`whoami` ~/certs/mycert.pem
 ```
